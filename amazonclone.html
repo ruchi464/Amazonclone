@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amazon Clone</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Heroicons CDN -->
+    <script src="https://unpkg.com/heroicons@1.0.6/dist/heroicons.min.js"></script>
+  </head>
+  <body class="bg-gray-200">
+    <header class="bg-black text-white w-full">
+      <div class="max-w-full px-0 sm:px-0 lg:px-0">
+        <div class="flex items-center justify-between h-16">
+          <!-- Logo -->
+          <div class="flex-shrink-0">
+            <img
+              class="h-12 w-full hover:border hover:border-white rounded"
+              src="./amazon.png"
+              alt="Amazon Logo"
+            />
+          </div>
+          <!-- Delivery Location -->
+          <div
+            class="hidden md:flex flex-col items-start ml-1 h-12 hover:border hover:border-white rounded"
+          >
+            <span class="text-xs text-gray-300">Deliver to</span>
+            <span class="text-sm font-bold">Mumbai, 400001</span>
+          </div>
+          <!-- Search Bar -->
+          <div class="flex-1 mx-4 mt-2 mb-2">
+            <div class="flex">
+              <select
+                class="bg-gray-200 text-black text-sm px-1 py-1 rounded-l-md focus:outline-amber-400 h-12 w-15"
+              >
+                <option>All</option>
+                <option>Books</option>
+                <option>Electronics</option>
+                <option>Fashion</option>
+              </select>
+              <input
+                type="text"
+                placeholder="Search Amazon"
+                class="w-full px-2 py-1 text-black focus:outline-amber-400 h-12"
+              />
+              <button
+                class="bg-yellow-500 px-4 py-1 rounded-r-md hover:bg-yellow-600 focus:outline-none h-12 text-black"
+              >
+                Search
+              </button>
+            </div>
+          </div>
+          <!-- Language Selector -->
+          <select
+            class="text-white text-sm px-1 py-1 rounded-l-md focus:outline-white h-12 bg-black hover:border hover:border-white rounded w-15"
+          >
+            <option>English</option>
+            <option>Hindi</option>
+            <option>Gujarati</option>
+            <option>Marathi</option>
+          </select>
+          <!-- Account -->
+          <div
+            class="hidden md:flex flex-col items-start px-2 hover:border hover:border-white rounded"
+          >
+            <span class="text-xs">Hello, Sign in</span>
+            <span class="text-sm font-bold">Account & Lists</span>
+          </div>
+          <!-- Orders -->
+          <div
+            class="hidden md:flex flex-col items-start px-2 hover:border hover:border-white rounded"
+          >
+            <span class="text-xs">Returns</span>
+            <span class="text-sm font-bold">& Orders</span>
+          </div>
+          <!-- Cart -->
+          <div
+            class="flex items-center px-2 hover:border hover:border-white rounded py-2"
+          >
+            <svg
+              class="h-6 w-6 text-white"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3 3h2l.4 2M7 13h10l4-8H5.4"
+              />
+            </svg>
+            <span class="ml-1 text-sm font-bold">Cart</span>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="navbar bg-gray-800 flex flex-row h-10 text-white">
+      <div
+        class="text-xs sm:text-sm p-2 px-4 h-10 font-extrabold mx-3 hover:border hover:border-white rounded"
+      >
+        ALL
+      </div>
+      <div
+        class="text-xs sm:text-sm p-2 px-4 h-10 font-bold mx-3 hover:border hover:border-white rounded"
+      >
+        Amazon Pay
+      </div>
+      <div
+        class="text-xs sm:text-sm p-2 px-4 h-10 font-bold mx-3 hover:border hover:border-white rounded"
+      >
+        Giftcard
+      </div>
+      <div
+        class="text-xs sm:text-sm p-2 px-4 h-10 font-bold mx-3 hover:border hover:border-white rounded"
+      >
+        MXplayer
+      </div>
+      <div
+        class="text-xs sm:text-sm p-2 px-4 h-10 font-bold mx-3 hover:border hover:border-white rounded"
+      >
+        Sell
+      </div>
+      <div
+        class="text-xs sm:text-sm p-2 px-4 h-10 font-bold mx-3 hover:border hover:border-white rounded"
+      >
+        Buy Again
+      </div>
+      <div
+        class="hidden sm:block text-sm p-2 px-4 h-10 font-bold mx-3 hover:border hover:border-white rounded"
+      >
+        Browser History
+      </div>
+      <div
+        class="hidden sm:block text-sm p-2 px-4 h-10 font-bold mx-3 hover:border hover:border-white rounded"
+      >
+        Health,Houshold & Personal Care
+      </div>
+      <div
+        class="hidden sm:block sm:text-sm p-2 px-4 h-10 font-bold mx-3 hover:border hover:border-white rounded"
+      >
+        Amazon Basics
+      </div>
+    </div>
+    <div class="main relative">
+      <img src="./1.jpg" alt="Product Image" class="w-full h-auto" />
+      <button
+        class="absolute top-1/4 left-4 text-black px-3 py-1 h-8 rounded hover:text-gray-500 text-3xl"
+      >
+        [<]
+      </button>
+      <button
+        class="absolute top-1/4 right-4 text-black px-3 py-1 h-8rounded hover:text-gray-500 text-3xl"
+      >
+        [>]
+      </button>
+      <div
+        class="card-4 absolute top-1/2 grid grid-cols-2 sm:grid-cols-4 sm:grid-rows-3 mx-5 gap-y-4"
+      >
+        <div
+          class="card relative flex flex-col bg-white max-h-[500px] mx-2 hover:border hover:border-black"
+        >
+          <h1 class="text-2xl font-bold p-4">Pick up where you left off</h1>
+          <div class="grid grid-cols-2 grid-rows-2 mx-2 mt-0">
+            <div>
+              <img src="./card1.jpg" alt="" class="p-2 m-1 pb-0" />
+              <h6 class="pl-2">peach cuddle sun..</h6>
+            </div>
+            <div>
+              <img src="./card12.jpg" alt="" class="p-2 m-1 pb-0" />
+              <h6 class="pl-2">peach cuddle cute..</h6>
+            </div>
+            <div>
+              <img src="./card13.jpg" alt="" class="p-2 m-1 pb-0" />
+              <h6 class="pl-2">peach cuddle ..</h6>
+            </div>
+            <div>
+              <img src="./card14.jpg" alt="" class="p-2 m-1 pb-0" />
+              <h6 class="pl-2">peach cuddle toy..</h6>
+            </div>
+            <a
+              href="#"
+              class="pl-2 p-2 m-1 text-s hover:underline text-blue-500"
+              >see more</a
+            >
+          </div>
+        </div>
+        <div
+          class="card flex flex-col bg-white max-h-[500px] mx-2 hover:border hover:border-black"
+        >
+          <h1 class="text-2xl font-bold p-4">Keep shopping for</h1>
+          <div class="grid grid-cols-2 grid-rows-2 mx-2 mt-0">
+            <div>
+              <img src="./card21.jpg" alt="" class="p-2 m-1 mb-3" />
+              <h6 class="pl-2 mt-2">Storage baskets</h6>
+              <h6 class="pl-2 text-xs text-gray-600">1 Viewed</h6>
+            </div>
+            <div>
+              <img src="./card22.jpg" alt="" class="p-2 m-1 pb-0" />
+              <h6 class="pl-2">Slipcovers</h6>
+              <h6 class="pl-2 text-xs text-gray-600">11 Viewed</h6>
+            </div>
+            <div>
+              <img src="./card23.jpg" alt="" class="px-8 pt-0 m-1 pb-0" />
+              <h6 class="pl-2">External optical...</h6>
+              <h6 class="pl-2 text-xs text-gray-600">1 Viewed</h6>
+            </div>
+            <div>
+              <img src="./card24.jpg" alt="" class="px-8 pt-0 m-1 pb-0" />
+              <h6 class="pl-2">Bagpack</h6>
+              <h6 class="pl-2 text-xs text-gray-600">3 Viewed</h6>
+            </div>
+            <a
+              href="#"
+              class="pl-2 p-2 m-1 text-s hover:underline text-blue-500"
+              >view more here</a
+            >
+          </div>
+        </div>
+        <div
+          class="card flex flex-col bg-white max-h-[500px] mx-2 hover:border hover:border-black"
+        >
+          <h1 class="text-2xl font-bold p-4">Continue shopping Deals</h1>
+          <div class="grid grid-cols-2 grid-rows-2 mx-2 mt-0">
+            <div class="">
+              <img src="dod.jpg" alt="" class="p-2 m-1 pb-0" />
+            </div>
+            <div>
+              <img src="dod2.jpg" alt="" class="p-2 m-1 pb-0" />
+            </div>
+            <div class="items-center h-28">
+              <img src="card33.jpg" alt="" class="p-2 pt-8 pb-0" />
+            </div>
+            <div class="h-32">
+              <img src="card34.jpg" alt="" class="p-2 m-1 pb-0" />
+            </div>
+            <a
+              href="#"
+              class="pl-2 p-2 pt-8 m-1 mt-6 text-s hover:underline text-blue-500"
+              >More deals</a
+            >
+          </div>
+        </div>
+        <div
+          class="card flex flex-col bg-white max-h-[500px] mx-2 hover:border hover:border-black"
+        >
+          <h1 class="text-2xl font-bold p-4">Pick up where you left off</h1>
+          <div class="grid grid-cols-2 grid-rows-2 mx-2 mt-0">
+            <div>
+              <img src="./card41.jpg" alt="" class="p-2 m-1 pb-0" />
+            </div>
+            <div>
+              <img src="./card42.jpg" alt="" class="p-2 m-1 pb-0" />
+            </div>
+            <div>
+              <img src="./card43.jpg" alt="" class="p-2 m-1 pb-0" />
+            </div>
+            <div>
+              <img src="./card44.jpg" alt="" class="p-2 m-1 pb-0" />
+            </div>
+            <a
+              href="#"
+              class="mt-12 pl-2 p-2 m-1 text-s hover:underline text-blue-500"
+              >see all deals</a
+            >
+          </div>
+        </div>
+        <div
+          class="col-span-2 flex flex-col bg-gray-400 max-h-[400px] mx-2 hover:border hover:border-black"
+        >
+          <h1 class="p-1 m-1 text-white font-bold text-2xl mb-0 pb-0">
+            Prime video:Recommended for you
+          </h1>
+          <img src="./video.jpg" alt="" class="px-1 mx-1 mt-0 pt-0" />
+          <h1 class="text-white mt-0 pt-0 p-1 m-1">
+            checkout more in prime video
+          </h1>
+        </div>
+        <div
+          class="card flex flex-col bg-white max-h-[400px] mx-2 hover:border hover:border-black"
+        >
+          <h1 class="text-2xl font-bold p-4">Keep shopping for</h1>
+          <div class="grid grid-cols-2 grid-rows-2 mx-2 mt-0">
+            <div>
+              <img src="./card51.jpg" alt="" class="p-2 m-1 mb-3" />
+              <h6 class="pl-2 mt-2">Mat</h6>
+              <h6 class="pl-2 text-xs text-gray-600">1 Viewed</h6>
+            </div>
+            <div>
+              <img src="./card52.jpg" alt="" class="p-2 m-1 pb-0" />
+              <h6 class="pl-2">Containers</h6>
+              <h6 class="pl-2 text-xs text-gray-600">11 Viewed</h6>
+            </div>
+            <div>
+              <img src="./card53.jpg" alt="" class="px-8 pt-0 m-1 pb-0" />
+              <h6 class="pl-2">table.....</h6>
+              <h6 class="pl-2 text-xs text-gray-600">1 Viewed</h6>
+            </div>
+            <div>
+              <img src="./card54.jpg" alt="" class="px-8 pt-0 m-1 pb-0" />
+              <h6 class="pl-2">cover..</h6>
+              <h6 class="pl-2 text-xs text-gray-600">3 Viewed</h6>
+            </div>
+          </div>
+        </div>
+        <div
+          class="card flex flex-col bg-white max-h-[400px] mx-2 hover:border hover:border-black"
+        >
+          <h1 class="text-2xl font-bold p-4">Keep shopping for</h1>
+          <div class="grid grid-cols-2 grid-rows-1 mx-2 mt-0">
+            <div>
+              <img src="./card61.jpg" alt="" class="p-2 m-1 mb-3" />
+              <h6 class="pl-2 mt-2">Table..</h6>
+              <h6 class="pl-2 text-xs text-gray-600">1 Viewed</h6>
+            </div>
+            <div>
+              <img src="./card62.jpg" alt="" class="p-2 m-1 pb-0" />
+              <h6 class="pl-2">Table..</h6>
+              <h6 class="pl-2 text-xs text-gray-600">12 Viewed</h6>
+            </div>
+            <div>
+              <img src="./card63.jpg" alt="" class="px-8 pt-0 m-1 pb-0" />
+              <h6 class="pl-2">Table..</h6>
+              <h6 class="pl-2 text-xs text-gray-600">5 Viewed</h6>
+            </div>
+            <div>
+              <img src="./card64.jpg" alt="" class="px-8 pt-0 m-1 pb-0" />
+              <h6 class="pl-2">Table..</h6>
+              <h6 class="pl-2 text-xs text-gray-600">3 Viewed</h6>
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex flex-col bg-white max-h-[300px] hover:border hover:border-black col-span-5"
+        >
+          <h1 class="text-2xl font-bold p-4">You might also like this</h1>
+          <div class="grid grid-cols-6">
+            <img
+              src="./16.jpg"
+              alt=""
+              class="p-1 ml-2 my-2 max-h-48 hover:border hover:border-black"
+            />
+            <img
+              src="./12.jpg"
+              alt=""
+              class="p-2 my-2 max-h-48 hover:border hover:border-black"
+            />
+            <img
+              src="./13.jpg"
+              alt=""
+              class="p-2 my-2 max-h-48 hover:border hover:border-black"
+            />
+            <img
+              src="./14.jpg"
+              alt=""
+              class="p-2 my-2 max-h-48 hover:border hover:border-black self-center"
+            />
+            <img
+              src="./15.jpg"
+              alt=""
+              class="p-2 my-2 max-h-48 hover:border hover:border-black"
+            />
+            <img
+              src="./17.jpg"
+              alt=""
+              class="p-2 my-2 max-h-48 hover:border hover:border-black"
+            />
+          </div>
+        </div>
+      </div>
+      <footer
+        class="absolute top-[1150px] sm:top-[1500px] bg-gray-800 text-white py-8 justify-baseline w-full"
+      >
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div>
+              <h3 class="text-sm font-semibold mb-4">Get to Know Us</h3>
+              <ul class="space-y-2 text-sm">
+                <li><a href="#" class="hover:underline">About Us</a></li>
+                <li><a href="#" class="hover:underline">Careers</a></li>
+                <li><a href="#" class="hover:underline">Press Releases</a></li>
+                <li><a href="#" class="hover:underline">Amazon Science</a></li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-sm font-semibold mb-4">Connect with Us</h3>
+              <ul class="space-y-2 text-sm">
+                <li><a href="#" class="hover:underline">Facebook</a></li>
+                <li><a href="#" class="hover:underline">Twitter</a></li>
+                <li><a href="#" class="hover:underline">Instagram</a></li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-sm font-semibold mb-4">Make Money with Us</h3>
+              <ul class="space-y-2 text-sm">
+                <li><a href="#" class="hover:underline">Sell on Amazon</a></li>
+                <li>
+                  <a href="#" class="hover:underline"
+                    >Sell under Amazon Accelerator</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="hover:underline"
+                    >Protect and Build Your Brand</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="hover:underline">Amazon Global Selling</a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-sm font-semibold mb-4">Let Us Help You</h3>
+              <ul class="space-y-2 text-sm">
+                <li>
+                  <a href="#" class="hover:underline">COVID-19 and Amazon</a>
+                </li>
+                <li><a href="#" class="hover:underline">Your Account</a></li>
+                <li><a href="#" class="hover:underline">Returns Centre</a></li>
+                <li>
+                  <a href="#" class="hover:underline"
+                    >100% Purchase Protection</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="mt-8 border-t border-gray-700 pt-4 text-center text-sm text-gray-400"
+          >
+            © 2025 Amazon Clone. All rights reserved. Made by &hearts;
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
